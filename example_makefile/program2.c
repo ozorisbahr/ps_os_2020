@@ -3,8 +3,7 @@
 
 #include "common.h"
 
-int main(void)
-{
+int main(void) {
 	puts("This is Program 2");
 
 	common_function(3);
