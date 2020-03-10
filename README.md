@@ -16,9 +16,11 @@ exercises associated with a given date are to be discussed on that day, i.e.,
 solutions for that exercise have to be handed in via OLAT by 17.00 on the
 previous day (Tuesdays).
 
-| Date       | Exc | Topic | Notes                                 |
-| ---------- | --- | ----- | ------------------------------------- |
-| 2020-03-11 | -   |       | Introduction to UNIX, shell scripting |
+| Date       | Exc             | Topic           | Notes                                       |
+| ---------- | --------------- | --------------- | ------------------------------------------- |
+| 2020-03-11 | -               |                 | Introduction to UNIX, shell scripting       |
+| 2020-03-18 | [1](exercise01) | Shell scripting |                                             |
+| 2020-03-25 |                 |                 | [Self-assessment](self_assessment_test) due |
 
 ## General Information
 
