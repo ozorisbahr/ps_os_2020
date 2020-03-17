@@ -59,7 +59,12 @@ such as `clang-format`. You can find an example
 [.clang-format](.clang-format) file in this repository. **Failure to
 consistently format code may result in lower scores.**
 
-Furthermore, all submitted code must be accompanied by a GNU Makefile. That
+Try to write _self-documenting code_ by choosing descriptive variable and
+function names. While you may want to add comments to certain sections of
+your code, try to avoid trivial comments such as `fopen(...); // open file`.
+**All names and comments should be written in English**.
+
+Finally, all submitted code must be accompanied by a GNU Makefile. That
 is, your solution must be able to be compiled with a single call to `make`.
 You can find an example Makefile and more information [here](example_makefile).
 
