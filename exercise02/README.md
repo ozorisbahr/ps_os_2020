@@ -86,5 +86,16 @@ The child
 
 Note that you **may** use `sleep()` in the child process.
 
+Example output:
+
+```
+./task3
+Received SIGUSR1
+Received SIGUSR1
+Received SIGUSR1
+Child done
+Parent done
+```
+
 **Hint**: Check the man page of `alarm()`, `pause()`, `sigprocmask()` and
 `sigaction()`.
