@@ -53,7 +53,7 @@ catch, however: In this task, you **must not** use `wait()` or `waitpid()`.
 Example output:
 
 ```
- ./task2
+./task2
 Child 20196 sleeping for 5 seconds...
 Child done
 Parent done
@@ -76,7 +76,8 @@ The parent
 - Finally, it prints `"Parent done"` and exits
 
 To implement this behavior the parent process **must** use the following
-functions: `alarm()` and `pause()`. You **must not** use `sleep()`.
+functions: `alarm()` and `pause()` (or alternatively `sigsuspend()`). You
+**must not** use `sleep()`.
 
 The child
 
@@ -97,5 +98,5 @@ Child done
 Parent done
 ```
 
-**Hint**: Check the man page of `alarm()`, `pause()`, `sigprocmask()` and
+**Hint**: Check the man page of `alarm()`, `pause()`, `kill()`, `sigprocmask()` and
 `sigaction()`.
