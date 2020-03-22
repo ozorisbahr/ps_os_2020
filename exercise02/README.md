@@ -94,6 +94,7 @@ Example output:
 Received SIGUSR1
 Received SIGUSR1
 Received SIGUSR1
+Received SIGUSR1
 Child done
 Parent done
 ```
