@@ -58,9 +58,8 @@ right child nodes.
 
 This task builds on top of the previous one, but no implementation is
 required. Its purpose is to ensure you understand the background behind the
-details of the previous task. You should be able to answer the following
-questions without the use of any additional notes. Presenting images and
-examples is fine, though not required.
+details of the previous task. **Please submit your answers as a free-form text
+file**.
 
 - When would you use a sorted binary tree over a linked list?
 - What would you change if the tree had to support not just integers, but any
