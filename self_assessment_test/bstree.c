@@ -1,3 +1,10 @@
 #include "bstree.h"
+#include <stdlib.h>
+#include <stdio.h>
 
-// TODO: Implement
+int main() {
+
+    printf("Test\n");
+
+    return EXIT_SUCCESS;
+}
