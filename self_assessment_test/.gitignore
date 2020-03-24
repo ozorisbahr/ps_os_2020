@@ -2,3 +2,5 @@ bstree_test
 bstree.o
 
 /CMakeLists.txt
+/a.out
+/bstree

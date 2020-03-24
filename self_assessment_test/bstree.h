@@ -6,17 +6,33 @@
 #include <stdlib.h>
 
 /**
+ * Stores integers, left and right child
+ */
+struct bstree_node;
+typedef struct bstree_node {
+    int data;
+    struct bstree_node* leftChild;
+    struct bstree_node* rightChild;
+} bstree_node;
+
+/**
  * Stores a binary, sorted tree of integers, in which each element may only
  * occur once.
  */
 struct bstree;
-typedef struct bstree bstree;
+typedef struct bstree {
+    struct bstree_node* root;
+    struct bstree_node* node;
+} bstree;
 
 /**
  * Creates and returns a new binary tree.
  * Must be deallocated by bstree_destroy.
  */
-bstree* bstree_create();
+bstree* bstree_create(){
+    bstree* newTree = (bstree*)malloc(sizeof(newTree));
+    return newTree;
+}
 
 /**
  * Destroys and deallocates all memory for the given tree 't'
@@ -27,7 +43,17 @@ void bstree_destroy(bstree* t);
  * Inserts the given number 'd' into tree 't'.
  * if the number is already in 't', no changes are made.
  */
-void bstree_insert(bstree* t, int d);
+void bstree_insert(bstree* t, int d) {
+    if(t->node->data == d) {
+        //Number already in t
+    }
+    else if(d <= t->node->data) {
+        t->node->leftChild->data = d;
+    }
+    else  {
+        t->node->rightChild->data = d;
+    }
+}
 
 /**
  * Removes the given number 'd' from tree 't'.
@@ -36,7 +62,7 @@ void bstree_remove(bstree* t, int d);
 
 /**
  * Returns the smallest number in tree 't'.
- */
+*/
 int bstree_minimum(const bstree* t);
 
 /**

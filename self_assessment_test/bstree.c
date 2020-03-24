@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 int main() {
-
-    printf("Test\n");
+    //bstree_node* root;
+    //root = NULL;
 
     return EXIT_SUCCESS;
 }
