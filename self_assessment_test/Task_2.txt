@@ -1,0 +1,52 @@
+Ozoris Bahr 11721639, Fikriye Özcan 11722993
+
+- When would you use a sorted binary tree over a linked list?
+Because its faster to search in.
+
+- What would you change if the tree had to support not just integers, but any
+  type of data?
+Add another struct inside bstree_node with any type of data as required.
+
+- Why do we use modules instead of putting everything a single file?
+To don’t lose overview and if you work in Teams its easier to split work.
+
+- Is the development cycle (i.e. changing a source file, recompiling and
+  running tests) faster when using modules? Explain your answer.
+Yeah aso answer in last question, for Team work it’s the way to go.
+
+- What is a _header guard_ and why is it needed?
+Its to prevent c from insert the same header multiply times.
+
+- Why is `bstree` not _defined_ in the header file? What are the
+  implications?
+Defined is just to test if a certain name is defined as a macro, we don’t need that.
+
+- Explain the `const` in the parameter list of `bstree_print`, is it required?
+To prevent the existing tree of overwriting while printing it.
+
+- Explain memory leaks. Why are memory leaks bad? You should know how to use `valgrind` to check your program for memory leaks.
+Memory leak can cause to fill up the hole system memory and so causing a crash.
+
+- What is the reason behind writing _everything_ in English?
+For international use its best to code in English, also most Online sources are in English.
+
+- Why should you use `static` for _non-exported_ functions?
+To give a variable a static address.
+
+- Why should we comment our source code? Is it always needed? What should the
+  comment state? What is _self-documenting code_?
+So other programmers can understand your code easily. 
+Or after a long time, you self don’t remember your code as well.
+
+- Why should the module not output debug messages?
+You use your IDE for debug.
+
+- Why and when should you use `assert`?
+It’s the best way to test your Program for unexpected behavior.
+
+- What are the benefits of using `make` over calling the compiler by hand?
+Easy to compile and you can set everything up, for example multithreading with –openmp…
+
+- Imagine it was your job to design the interface for the bstree module
+  (writing `bstree.h`). What would you have done differently, and why?
+I would do bstree_node as given but for the rest i would do the same.
