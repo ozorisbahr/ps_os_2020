@@ -31,6 +31,9 @@ typedef struct bstree {
  */
 bstree* bstree_create(){
     bstree* newTree = (bstree*)malloc(sizeof(newTree));
+    newTree->node = NULL;
+    newTree->node->rightChild = NULL;
+    newTree->node->rightChild = NULL;
     return newTree;
 }
 
