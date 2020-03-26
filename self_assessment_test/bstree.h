@@ -6,23 +6,14 @@
 #include <stdlib.h>
 
 /**
- * Stores integers, left and right child
- */
-struct bstree_node;
-typedef struct bstree_node {
-    int data;
-    struct bstree_node* leftChild;
-    struct bstree_node* rightChild;
-} bstree_node;
-
-/**
  * Stores a binary, sorted tree of integers, in which each element may only
  * occur once.
  */
 struct bstree;
 typedef struct bstree {
-    struct bstree_node* root;
-    struct bstree_node* node;
+    int data;
+    struct bstree* leftChild;
+    struct bstree* rightChild;
 } bstree;
 
 /**
@@ -31,30 +22,31 @@ typedef struct bstree {
  */
 bstree* bstree_create(){
     bstree* newTree = (bstree*)malloc(sizeof(newTree));
-    newTree->node = NULL;
-    newTree->node->rightChild = NULL;
-    newTree->node->rightChild = NULL;
+    newTree->leftChild = NULL;
+    newTree->rightChild = NULL;
     return newTree;
 }
 
 /**
  * Destroys and deallocates all memory for the given tree 't'
  */
-void bstree_destroy(bstree* t);
+void bstree_destroy(bstree* t) {
+    free(t);
+}
 
 /**
  * Inserts the given number 'd' into tree 't'.
  * if the number is already in 't', no changes are made.
  */
 void bstree_insert(bstree* t, int d) {
-    if(t->node->data == d) {
+    if(d==0) {
         //Number already in t
     }
-    else if(d <= t->node->data) {
-        t->node->leftChild->data = d;
+    else if(d <= t->data) {
+        t->leftChild->data = d;
     }
     else  {
-        t->node->rightChild->data = d;
+        t->rightChild->data = d;
     }
 }
 
