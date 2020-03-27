@@ -144,7 +144,25 @@ bool bstree_contains(const bstree* t, int d){
  * Returns the number of elements of the given bstree 't'.
  * NOTE: should complete in O(1) time.
  */
-size_t bstree_size(const bstree* t);
+size_t bstree_size(const bstree* t) {
+
+    int counter = 0;
+
+    while(1) {
+        if(t->leftChild != NULL) {
+            counter++;
+            t = t->leftChild;
+        } else if(t->rightChild != NULL) {
+            counter++;
+            t = t->rightChild;
+        }
+
+        if (t == NULL) {
+            break;
+        }
+    }
+    return (size_t)counter;
+}
 
 /**
  * Prints the given bstree 't' to the supplied output stream 'out'
