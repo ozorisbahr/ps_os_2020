@@ -22,6 +22,7 @@ typedef struct bstree {
  */
 bstree* bstree_create(){
     bstree* newTree = (bstree*)malloc(sizeof(newTree));
+    newTree->data = 0;
     newTree->leftChild = NULL;
     newTree->rightChild = NULL;
     return newTree;
@@ -39,8 +40,8 @@ void bstree_destroy(bstree* t) {
  * if the number is already in 't', no changes are made.
  */
 void bstree_insert(bstree* t, int d) {
-    if(d==0) {
-        //Number already in t
+    if(t == NULL) {
+        bstree_create();
     }
     else if(d <= t->data) {
         t->leftChild->data = d;
@@ -82,6 +83,8 @@ size_t bstree_size(const bstree* t);
  * example empty: ( NIL ) : 0
  * example 3,4,7 in a balanced tree: ((3), 4, (7)) : 3
  */
-void bstree_print(const bstree* t, FILE* out);
+void bstree_print(const bstree* t, FILE* out) {
+    fprintf(out, "%d \n", t->data);
+}
 
 #endif // _BSTREE_H_
