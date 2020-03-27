@@ -33,8 +33,8 @@ bstree* bstree_create(){
  */
 void bstree_destroy(bstree* t) {
     if(bstree!=NULL) {
-        bstree_destroy(bstree->left);
-        bstree_destroy(bstree->right);
+        bstree_destroy(bstree->leftChild);
+        bstree_destroy(bstree->rightChild);
         free(bstree);
     }
 }
@@ -45,13 +45,18 @@ void bstree_destroy(bstree* t) {
  */
 void bstree_insert(bstree* t, int d) {
     if(t == NULL) {
-        bstree_create();
+        t=malloc(sizeof(bstree));
+        bstree->data=d;
+        bstree->leftChild=NULL;
+        bstree->rightChild=NULL;
     }
     else if(d <= t->data) {
-        t->leftChild->data = d;
+        bstree_insert(bstree->leftChild,d);
+        //t->leftChild->data = d;
     }
     else  {
-        t->rightChild->data = d;
+        //t->rightChild->data = d;
+        bstree_insert(bstree->rightChild,d);
     }
 }
 
