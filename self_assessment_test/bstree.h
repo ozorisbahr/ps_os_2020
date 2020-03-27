@@ -32,7 +32,11 @@ bstree* bstree_create(){
  * Destroys and deallocates all memory for the given tree 't'
  */
 void bstree_destroy(bstree* t) {
-    free(t);
+    if(bstree!=NULL) {
+        bstree_destroy(bstree->left);
+        bstree_destroy(bstree->right);
+        free(bstree);
+    }
 }
 
 /**
