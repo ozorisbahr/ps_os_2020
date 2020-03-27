@@ -45,18 +45,18 @@ void bstree_destroy(bstree* t) {
  */
 void bstree_insert(bstree* t, int d) {
     if(t == NULL) {
-        t=malloc(sizeof(bstree));
-        bstree->data=d;
-        bstree->leftChild=NULL;
-        bstree->rightChild=NULL;
+        t=malloc(sizeof(t));
+        t->data=d;
+        t->leftChild=NULL;
+        t->rightChild=NULL;
     }
     else if(d <= t->data) {
-        bstree_insert(bstree->leftChild,d);
+        bstree_insert(t->leftChild,d);
         //t->leftChild->data = d;
     }
     else  {
         //t->rightChild->data = d;
-        bstree_insert(bstree->rightChild,d);
+        bstree_insert(t->rightChild,d);
     }
 }
 
@@ -64,31 +64,32 @@ void bstree_insert(bstree* t, int d) {
  * Removes the given number 'd' from tree 't'.
  */
 void bstree_remove(bstree* t, int d){
-    if(t == NULL) return NULL;
-    if(d>t->data) {
-        t->rightChild=bstree_remove(t->rightChild,d);
+    struct bstree* temp = NULL;
+    if(t == NULL) { //Nothing to remove
+    } else if(d>t->data) {
+        bstree_remove(t->rightChild,d);
     } else if (d<t->data) {
-        t->leftChild=bstree_remove(t->leftChild,d);
+        bstree_remove(t->leftChild,d);
     } else {
-        if(t->leftChild == NULL && t->rightChild = NULL) {
+        if(t->leftChild == NULL && t->rightChild == NULL) {
             free(t);
-            return NULL;
-        } else if (t->leftChild=NULL || t->rightChild = NULL) { //one child
-            struct node *temp;
-            if(t->leftChild==NULL) {
-                temp=t->rightChild;
+            //return NULL;
+        } else if (t->leftChild == NULL || t->rightChild == NULL) { //one child
+
+            if(t->leftChild == NULL) {
+                temp = t->rightChild;
             } else {
                 temp = t->leftChild;
             }
             free(t);
-            return temp;
+            //return temp;
         } else { //two children
-            struct node *temp = bstree_minimum(t->rightChild);
-            t->data = temp->data;
-            t->rightChild = bstree_remove(t->rightChild, temp->data);
+            //temp->data = bstree_minimum(t->rightChild);
+            //t->data = temp->data;
+            bstree_remove(t->rightChild, temp->data);
         }
     }
-    return t;
+    //return t;
 }
 
 /**
@@ -96,11 +97,11 @@ void bstree_remove(bstree* t, int d){
 */
 int bstree_minimum(const bstree* t){
     if(t == NULL) {
-        return NULL;
+        return 0;
     } else if(t->leftChild != NULL) { //node with minimum value will have no left child
         return bstree_minimum(t->leftChild); //left most element will be minimum
     }
-    return t;
+    return t->data;
 }
 
 /**
