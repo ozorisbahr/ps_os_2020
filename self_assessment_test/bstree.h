@@ -32,7 +32,6 @@ bstree* bstree_create(){
  * Destroys and deallocates all memory for the given tree 't'
  */
 void bstree_destroy(bstree* t) {
-    if()
     if(t!=NULL) {
         bstree_destroy(t->leftChild);
         bstree_destroy(t->rightChild);
@@ -64,7 +63,33 @@ void bstree_insert(bstree* t, int d) {
 /**
  * Removes the given number 'd' from tree 't'.
  */
-void bstree_remove(bstree* t, int d);
+void bstree_remove(bstree* t, int d){
+    if(t == NULL) return NULL;
+    if(d>t->data) {
+        t->rightChild=bstree_remove(t->rightChild,d);
+    } else if (d<t->data) {
+        t->leftChild=bstree_remove(t->leftChild,d);
+    } else {
+        if(t->leftChild == NULL && t->rightChild = NULL) {
+            free(t);
+            return NULL;
+        } else if (t->leftChild=NULL || t->rightChild = NULL) { //one child
+            struct node *temp;
+            if(t->leftChild==NULL) {
+                temp=t->rightChild;
+            } else {
+                temp = t->leftChild;
+            }
+            free(t);
+            return temp;
+        } else { //two children
+            struct node *temp = bstree_minimum(t->rightChild);
+            t->data = temp->data;
+            t->rightChild = bstree_remove(t->rightChild, temp->data);
+        }
+    }
+    return t;
+}
 
 /**
  * Returns the smallest number in tree 't'.
