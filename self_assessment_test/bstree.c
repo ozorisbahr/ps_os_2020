@@ -13,5 +13,8 @@ int main() {
 
     bstree_destroy(tree);
 
+
+
+
     return EXIT_SUCCESS;
 }
