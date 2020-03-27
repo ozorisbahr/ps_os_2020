@@ -107,7 +107,14 @@ int bstree_minimum(const bstree* t){
 /**
  * Returns the largest number in tree 't'.
  */
-int bstree_maximum(const bstree* t);
+int bstree_maximum(const bstree* t){
+    if(t == NULL) {
+        return 0;
+    } else if(t->rightChild != NULL) { //node with maximum value will have no right child
+        return bstree_maximum(t->rightChild); //right most element will be maximum
+    }
+    return t->data;
+}
 
 /**
  * Returns true if the given tree 't' contains 'd', false otherwise.
