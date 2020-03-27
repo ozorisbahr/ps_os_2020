@@ -119,7 +119,26 @@ int bstree_maximum(const bstree* t){
 /**
  * Returns true if the given tree 't' contains 'd', false otherwise.
  */
-bool bstree_contains(const bstree* t, int d);
+bool bstree_contains(const bstree* t, int d){
+
+    bool found = false;
+
+    while(!found) {
+        if (d == t->data) {
+            found = true;
+            return true;
+        } else if (d <= t->data) {
+            t = t->leftChild;
+        } else {
+            t = t->rightChild;
+        }
+
+        if (t == NULL) {
+            break;
+        }
+    }
+    return false;
+}
 
 /**
  * Returns the number of elements of the given bstree 't'.
