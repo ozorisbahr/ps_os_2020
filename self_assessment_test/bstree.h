@@ -97,7 +97,7 @@ void bstree_remove(bstree* t, int d){
 */
 int bstree_minimum(const bstree* t){
     if(t == NULL) {
-        return 0;
+        return t->data;
     } else if(t->leftChild != NULL) { //node with minimum value will have no left child
         return bstree_minimum(t->leftChild); //left most element will be minimum
     }
@@ -109,7 +109,7 @@ int bstree_minimum(const bstree* t){
  */
 int bstree_maximum(const bstree* t){
     if(t == NULL) {
-        return 0;
+        return t->data;
     } else if(t->rightChild != NULL) { //node with maximum value will have no right child
         return bstree_maximum(t->rightChild); //right most element will be maximum
     }
@@ -158,7 +158,7 @@ size_t bstree_size(const bstree* t) {
         }
 
         if (t == NULL) {
-            break;
+                break;
         }
     }
     return (size_t)counter;
