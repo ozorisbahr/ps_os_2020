@@ -61,7 +61,7 @@ week?
 
 # Task 3
 
-In the provided file [philosophers.c](task3/philosophers.c) you can find an
+In the provided file [philosophers.c](philosophers.c) you can find an
 implementation of the classic
 [Dining philosophers problem](https://en.wikipedia.org/wiki/Dining_philosophers_problem).
 However, the implementation is flawed: In some situations multiple philosophers
